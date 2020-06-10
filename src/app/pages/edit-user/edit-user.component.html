@@ -1,0 +1,64 @@
+
+<div class="user-section" >
+    <div class="container">
+
+        <div class="row">
+           
+            <div class="col-sm-6 p-0">
+                <form action="javascript:;" #form="ngForm" (ngSubmit)="onPressSave(form)">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h4 class="log-in">Edit User</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group ">
+                                <label for=""> <i class="fa fa-envelope"></i> Email</label>
+                                <input type="email" email="true" class="form-control" autocomplete="off" name="email" [(ngModel)]="user.email"
+                                    required #email="ngModel" readonly />
+                              
+                            </div>
+
+
+                            <div class="form-group ">
+                                <label for=""> <i class="fa fa-envelope"></i> Name</label>
+                                <input type="text"  class="form-control" autocomplete="off" name="name" [(ngModel)]="user.name"
+                                    required #name="ngModel" />
+                                <div *ngIf=" name.invalid && (name.dirty || name.touched) || form.submitted" class="validation-error">
+                                    <div *ngIf="name?.errors?.required">
+                                        Name is Required
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-group ">
+                                <label for=""> <i class="fa fa-envelope"></i> job</label>
+                                <input type="text"  class="form-control" autocomplete="off" job="job" [(ngModel)]="user.job"
+                                    required #job="ngModel" />
+                                <div *ngIf=" job.invalid && (job.dirty || job.touched) || form.submitted" class="validation-error">
+                                    <div *ngIf="job?.errors?.required">
+                                        Job is Required
+                                    </div>
+                             
+
+                                </div>
+                            </div>
+
+                        
+                        </div>
+                        <div class="card-footer justify-content-center m-auto">
+                            <button type="submit" class="btn btn-light">Save Changes</button>
+                            <button type="button" class="btn btn-danger" [routerLink]="['/page/home']" >Close</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6 imag-profile">
+                <img [src]="user.avatar" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-response-message [message]="toastMessage" [class]="toastClass" [show]="showToast"></app-response-message>

@@ -1,0 +1,8 @@
+<div class="div-toaster" *ngIf="show">
+    <div class="card" data-aos="fade-left" [ngClass]="class"
+    data-aos-offset="500"
+    data-aos-duration="500">
+        <h6> <i class="fa fa-check-circle"></i> {{header}}</h6>
+        {{message}} !
+    </div>
+</div>

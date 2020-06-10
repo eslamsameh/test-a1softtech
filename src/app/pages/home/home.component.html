@@ -1,0 +1,26 @@
+<div class="home-section">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary btn-add" [routerLink]="['/page/add-user']" >Add User</button>
+        </div>
+        <div class="row">
+            <div class="col-md-4 image-contain" *ngFor="let item of users; let i = index">
+                <img [src]="item.avatar" alt="item.user">
+                <div class="left">
+                    <div class="btn btn-primary" [routerLink]="['/page/edit-user', item.id]" ><i class="fa fa-pencil"></i></div>
+                </div>
+                <div class="middle">
+                    <div class="btn btn-outline-danger btn-remove" (click)="onPressRemoveUser(item.id, i)">
+                        Delete <span class="span-name">{{item.first_name}} {{item.last_name}}</span> </div>
+                </div>
+            </div>
+        </div>
+
+        <ngb-pagination 
+        (pageChange)="onChangePage($event)" 
+        [(page)]="page" 
+        [pageSize]="pageSize"
+        [collectionSize]="items">
+        </ngb-pagination>
+    </div>
+</div>

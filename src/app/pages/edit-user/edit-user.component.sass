@@ -1,0 +1,69 @@
+@import "../../sass-variables/variables"
+.user-section
+    height: 100vh
+    position: relative
+    width: 100%
+    &::after
+        content:''
+        position: absolute
+        width: 100%
+        height: 100%
+        top:0
+        left:0
+        opacity:0.6
+
+.container, .row
+    height: 100%
+    form
+        height: 100%
+.card
+    z-index: 1
+    background: linear-gradient(130deg, $color-blue, $color-liner-blue)
+    padding: 20px 10%
+    height: 650px
+    position: relative
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+    left: 50%
+    top: 50%
+    -webkit-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+    width: 100%
+    border-radius: 0px
+    .form-control
+        background: transparent
+        border: 0px
+        border-bottom: 1px solid $color-white
+        border-radius: 0px
+        color: $color-white            
+    label
+        color: $color-white
+        i 
+            margin: 0px 15px 0px 0px
+        
+.card-header, .card-footer
+    border: 0px
+    background: transparent
+.logo
+    font-size: 7vw
+    color: $color-white
+.log-in
+    color: $color-white
+.card-footer
+    .btn
+        width: 200px
+        border-radius: 30px
+        height: 45px
+.card-content
+    margin: auto 0px
+.imag-profile
+    width: 100%
+    height: 100%
+    img 
+        width: 100%
+        height: 650px
+        position: absolute
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+        left: 50%
+        top: 50%
+        -webkit-transform: translate(-50%, -50%)
+        transform: translate(-50%, -50%)
