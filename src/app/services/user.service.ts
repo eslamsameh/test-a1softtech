@@ -11,28 +11,23 @@ export class UserService {
   constructor(public config: UrlService, public http: HttpClient) { }
   users(page) {
     const url = this.config.url + this.config.users.replace('{page}', page);
-    const header = new HttpHeaders({ 'content-type': 'application/json' });
-    return this.http.get(url, { headers: header });
+    return this.http.get(url);
   }
   deleteUser(id) {
     const url = this.config.url + this.config.singleUserOrDeleteUser.replace('{id}', id);
-    const header = new HttpHeaders({ 'content-type': 'application/json' });
-    return this.http.delete(url, { headers: header });
+    return this.http.delete(url);
   }
   singleUser(id) {
     const url = this.config.url + this.config.singleUserOrDeleteUser.replace('{id}', id);
-    const header = new HttpHeaders({ 'content-type': 'application/json' });
-    return this.http.get(url, { headers: header });
+    return this.http.get(url);
   }
   updateUser(data, id) {
     const url = this.config.url + this.config.singleUserOrDeleteUser.replace('{id}', id);
-    const header = new HttpHeaders({ 'content-type': 'application/json' });
-    return this.http.put(url, data, { headers: header });
+    return this.http.put(url, data);
   }
   addUser(data) {
     const url = this.config.url + this.config.createUser;
-    const header = new HttpHeaders({ 'content-type': 'application/json' });
-    return this.http.post(url, data, { headers: header });
+    return this.http.post(url, data);
   }
 }
 

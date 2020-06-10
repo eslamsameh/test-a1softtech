@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.showToast = false;
       nextUrl && this.router.navigateByUrl(nextUrl);
-    }, 3000);
+    }, 2000);
   }
 
 

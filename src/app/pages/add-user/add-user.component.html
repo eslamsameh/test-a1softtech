@@ -14,7 +14,7 @@
                             <div class="form-group ">
                                 <label for=""> <i class="fa fa-envelope"></i> Name</label>
                                 <input type="text"  class="form-control" autocomplete="off" name="name" [(ngModel)]="user.name"
-                                    required #name="ngModel" />
+                                    required #name="ngModel" [ngModelOptions]="{standalone: true}" />
                                 <div *ngIf=" name.invalid && (name.dirty || name.touched) || form.submitted" class="validation-error">
                                     <div *ngIf="name?.errors?.required">
                                         Name is Required
@@ -26,7 +26,7 @@
                             <div class="form-group ">
                                 <label for=""> <i class="fa fa-envelope"></i> job</label>
                                 <input type="text"  class="form-control" autocomplete="off" job="job" [(ngModel)]="user.job"
-                                    required #job="ngModel" />
+                                    required #job="ngModel" [ngModelOptions]="{standalone: true}" />
                                 <div *ngIf=" job.invalid && (job.dirty || job.touched) || form.submitted" class="validation-error">
                                     <div *ngIf="job?.errors?.required">
                                         Job is Required
